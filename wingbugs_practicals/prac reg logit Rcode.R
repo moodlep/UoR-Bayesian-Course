@@ -1,0 +1,5 @@
+rats <- read.table("prac reg logit data.txt", header=T)
+attach(rats)
+resp <- cbind(y,n-y)
+logr1 <- glm(resp~t, family=binomial)
+summary(logr1)
