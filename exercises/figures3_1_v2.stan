@@ -43,3 +43,11 @@ model{
   // prior: 
   sigma_sq ~ lognormal(m_sigma_sq, s_sigma_sq);
 }
+generated quantities{
+  /* Compute or sample values that depend on data and/or parameters but don't impact inference 
+   * example below */
+  int gen[N];
+  for(n in 1:N){
+    gen[n] = bernoulli_rng(0.7);
+  }
+}
