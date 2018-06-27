@@ -41,6 +41,7 @@ model{
   vector[N] eta = X*beta;
   y ~ normal(eta,sqrt(sigma_sq));
   // prior: 
+  beta ~ normal(m_beta, s_beta);
   sigma_sq ~ lognormal(m_sigma_sq, s_sigma_sq);
 }
 generated quantities{
